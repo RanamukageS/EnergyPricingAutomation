@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  playwright-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    container_name: origin-automation-tests
+    # Share /dev/shm to prevent Chromium out-of-memory crashes inside Docker
+    shm_size: '2gb'
+    environment:
+      - CI=true
+      - DOCKER=true
+      - BASE_URL=${BASE_URL:-https://www.originenergy.com.au}
+      # Force Playwright to use the bundled browser inside the image
+      - PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+    volumes:
+      # Mount all outputs out of the container so they persist on the host
+      - ./downloads:/app/downloads
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+      - ./allure-results:/app/allure-results
+    # Exit code from `npm test` propagates to the host shell
+    command: npm test

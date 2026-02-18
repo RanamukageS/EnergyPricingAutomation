@@ -1,0 +1,11 @@
+node_modules/
+dist/
+
+downloads/*
+!downloads/.gitkeep
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+
+*.local
