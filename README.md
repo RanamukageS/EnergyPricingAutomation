@@ -42,8 +42,8 @@ End-to-end Playwright automation for the Origin Energy pricing flow, built with 
 
 | Report | npm | Docker Compose |
 |--------|-----|----------------|
-| **Playwright HTML** | `npm run test:report` | `npm run test:report` |
-| **Allure reports** | `npm run allure:serve` | `npm run allure:serve`|
+| **Playwright HTML** | `npm run test:report` | 1. (if not done before) `npm install` <br> 2. `npm run test:report` |
+| **Allure reports** | `npm run allure:serve` | 1. (if not done before) `npm install` <br> 2. `npm run allure:serve`|
 
 ---
 
