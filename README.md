@@ -22,6 +22,7 @@ End-to-end Playwright automation for the Origin Energy pricing flow, built with 
 | Docker (if needs to run using docker) | ≥ 28.5 |
 
 ---
+*All the below steps to be followed in terminal / command line
 
 ## Setup & Run
 
